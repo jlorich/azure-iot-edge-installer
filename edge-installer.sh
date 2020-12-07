@@ -170,16 +170,17 @@ function clear_proxy()
 
     echo "Clearing Docker Daemon Proxy"
     rm -f /etc/systemd/system/docker.service.d/http-proxy.conf
+    rm -f /etc/systemd/system/docker.service.d/override.conf
 
     echo "Clearing Edge Daemon Proxy"
     rm -f /etc/systemd/system/iotedge.service.d/http-proxy.conf
+    rm -f /etc/systemd/system/iotedge.service.d/override.conf
 
     systemctl daemon-reload
     systemctl restart docker
 
     echo "Clearing IoT Edge Agent Proxy"
     {yq d -i ${EDGE_CONFIG_PATH} agent.env.https_proxy} &> /dev/null
-
 }
 
 
