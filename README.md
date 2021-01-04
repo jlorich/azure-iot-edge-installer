@@ -12,7 +12,7 @@ A tool for making IoT Edge installations easier.  Currently targeted at RHEL7.5+
 #### Configure Upstream Protocol and Proxy Support
 
 ```
-./edge-installer.sh configure AmqpWs http://proxy.cat.com
+./edge-installer.sh configure AmqpWs http://proxy.example.com
 ```
 
 #### Configure DPS X509 Auth
